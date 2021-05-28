@@ -1,1 +1,2 @@
-core.autocrlf true
+*.ms    text    eol=crlf
+*.sh    text    eol=lf
