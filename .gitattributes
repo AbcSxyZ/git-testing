@@ -2,3 +2,4 @@
 *.ms    text    eol=lf
 *.sh    text    eol=lf
 *.cr    text    eol=crlf
+*.test  text    eol=lf
