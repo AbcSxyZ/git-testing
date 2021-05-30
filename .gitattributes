@@ -1,3 +1,2 @@
 *.ms    text    eol=crlf
 *.sh    text    eol=lf
-crlf_file   text    eol=lf
