@@ -1,5 +1,2 @@
-*       text    auto.crlf=true
-*.ms    text    eol=lf
+*.ms    text    eol=crlf
 *.sh    text    eol=lf
-*.cr    text    eol=crlf
-*.test  text    eol=lf
