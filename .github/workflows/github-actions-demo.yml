@@ -27,5 +27,5 @@ jobs:
         run: |
           docker login
           docker ps
-          # sudo docker build -t abcsxyz/test:0.0.1.ga docker_image
-          # sudo docker push abcsxyz/test:0.0.1.ga
+          sudo docker build -t abcsxyz/test:0.0.1.ga docker_image
+          sudo docker push abcsxyz/test:0.0.1.ga
