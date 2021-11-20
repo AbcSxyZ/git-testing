@@ -40,7 +40,7 @@ RUN set -ex && \
     && if [ "${TARGETPLATFORM}" = "linux/arm64v8" ]; then export TARGETPLATFORM=aarch64-linux-gnu; fi \
     && if [ "${TARGETPLATFORM}" = "linux/arm/v7" ]; then export TARGETPLATFORM=arm-linux-gnueabihf; fi \
     && if [ "${TARGETPLATFORM}" = "linux/i386" ]; then export TARGETPLATFORM=i686-pc-linux-gnu; fi \
-    && wget https://github.com/dogecoin/dogecoin/releases/download/v${DOGECOIN_VERSION}/dogecoin-${DOGECOIN_VERSION}-${TARGETPLATFORM}.tar.gz
+    && wget https://github.com/dogecoin/dogecoin/releases/download/v${VERSION}/dogecoin-${VERSION}-${TARGETPLATFORM}.tar.gz
 
 COPY docker-entrypoint.py /usr/local/bin/docker-entrypoint
 
