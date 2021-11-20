@@ -4,8 +4,9 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Docker
+      - name: Checkout repository
         uses: actions/checkout@v2
+      - name: Install Docker
         run: |
           echo $(pwd)
           echo $(ls)
