@@ -1,14 +1,14 @@
-name: GitHub Actions Demo
+name: Docker Hub Publication
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Publish-Docker-Images:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         version:
           - '1.14'
     steps:
-      - name: Checkout repository
+      - name: Checkout repository sources
         uses: actions/checkout@v2
 
       - name: Set up QEMU
