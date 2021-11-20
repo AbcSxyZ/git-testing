@@ -21,11 +21,6 @@ RUN apt update && apt install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Download Dogecoin Core from github releases.
-# Move downloaded binaries and man pages in the container system.
-# Setuid on binaries with $USER rights, to limit root usage.
-#
-# Security: more secure way than check hash for download,
-# see https://github.com/docker-library/official-images#security
 WORKDIR /tmp
 
 RUN set -ex && \
@@ -35,6 +30,8 @@ RUN set -ex && \
     && if [ "${TARGETPLATFORM}" = "linux/386" ]; then TARGETPLATFORM=i686-pc-linux-gnu; fi \
     && wget https://github.com/dogecoin/dogecoin/releases/download/v${VERSION}/dogecoin-${VERSION}-${TARGETPLATFORM}.tar.gz
 
+# Move downloaded binaries and man pages in the container system.
+# Setuid on binaries with $USER rights, to limit root usage.
 RUN tar -xvf dogecoin-${VERSION}-*.tar.gz --strip-components=1 && \
     cp share/man/man1/*.1 /usr/share/man/man1 && \
     cp bin/dogecoin* /usr/local/bin && \
