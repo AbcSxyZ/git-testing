@@ -1,5 +1,5 @@
 FROM ubuntu:latest
 
-RUN echo TEST > /test_file
+RUN dpkg-architecture --query DEB_BUILD_GNU_TYPE > /architecture
 
 ENTRYPOINT ["bash"]
