@@ -35,12 +35,22 @@ RUN apt update && apt install -y \
 #     chown ${USER}:${USER} /usr/local/bin/dogecoin* && \
 #     chmod 4555 /usr/local/bin/dogecoin* && \
 #     rm -rf /tmp/*
+WORKDIR /tmp
+
 RUN set -ex && \
     if [ "${TARGETPLATFORM}" = "linux/amd64" ]; then export TARGETPLATFORM=x86_64-linux-gnu; fi \
     && if [ "${TARGETPLATFORM}" = "linux/arm64" ]; then export TARGETPLATFORM=aarch64-linux-gnu; fi \
     && if [ "${TARGETPLATFORM}" = "linux/arm/v7" ]; then export TARGETPLATFORM=arm-linux-gnueabihf; fi \
     && if [ "${TARGETPLATFORM}" = "linux/386" ]; then export TARGETPLATFORM=i686-pc-linux-gnu; fi \
     && wget https://github.com/dogecoin/dogecoin/releases/download/v${VERSION}/dogecoin-${VERSION}-${TARGETPLATFORM}.tar.gz
+
+
+RUN tar -xvf dogecoin-${VERSION}-*.tar.gz --strip-components=1 && \
+    cp share/man/man1/*.1 /usr/share/man/man1 && \
+    cp bin/dogecoin* /usr/local/bin && \
+    chown ${USER}:${USER} /usr/local/bin/dogecoin* && \
+    chmod 4555 /usr/local/bin/dogecoin* && \
+    rm -rf /tmp/*
 
 COPY docker-entrypoint.py /usr/local/bin/docker-entrypoint
 
