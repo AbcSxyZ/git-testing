@@ -7,7 +7,7 @@ jobs:
       - name: Install Docker
         run: |
           echo $(pwd)
-          ls
+          echo $(ls)
           # sudo apt update
           # sudo apt-get install ca-certificates curl gnupg lsb-release
           # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
