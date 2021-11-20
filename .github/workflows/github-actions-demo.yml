@@ -2,7 +2,7 @@ name: GitHub Actions Demo
 on: [push]
 jobs:
   Explore-GitHub-Actions:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Install Docker
         run: |
