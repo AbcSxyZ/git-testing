@@ -27,7 +27,7 @@ jobs:
       - name: Publish Docker image
         uses: docker/build-push-action@v2
         with:
-          context: v${{matrix.version}}
+          context: docker_image
           # platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/386
           platforms: linux/amd64
           push: true
