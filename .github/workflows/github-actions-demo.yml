@@ -16,8 +16,9 @@ jobs:
           sudo apt-get install docker-ce docker-ce-cli containerd.io
       - name: Deploy image
         run: |
+          echo $(pwd)
           echo docker login -u ${{secrets.DOCKERHUB_PASSWORD}} -p ${{secrets.DOCKERHUB_USER}}
           sudo docker login -u=${{secrets.DOCKERHUB_PASSWORD}} -p=${{secrets.DOCKERHUB_USER}}
-          echo $(pwd)
           docker build -t abcsxyz/test:0.0.git docker_image
           docker push abcsxyz/test:0.0.git
+          ls
