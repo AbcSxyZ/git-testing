@@ -25,6 +25,7 @@ jobs:
 
       - name: Publish Docker image
         run: |
-          sudo docker build -t abcsxyz/test:0.0.1.ga docker_image
-          sudo docker push abcsxyz/test:0.0.1.ga
-          ls
+          docker login
+          docker ps
+          # sudo docker build -t abcsxyz/test:0.0.1.ga docker_image
+          # sudo docker push abcsxyz/test:0.0.1.ga
