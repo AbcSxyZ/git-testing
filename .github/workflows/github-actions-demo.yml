@@ -3,6 +3,11 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version:
+          - '1.14'
+          - '1.15'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -13,17 +18,6 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      # - name: Install Docker
-      #   run: |
-      #     sudo apt update
-      #     sudo apt-get install ca-certificates curl gnupg lsb-release
-      #     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-      #     echo \
-      #       "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | \
-      #                                                                                                                                                   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-      #     sudo apt-get update
-      #     sudo apt-get install docker-ce docker-ce-cli containerd.io
-
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
@@ -33,7 +27,7 @@ jobs:
       - name: Publish Docker image
         uses: docker/build-push-action@v2
         with:
-          context: docker_image
-          platforms: linux/amd64,linux/arm64/v8,linux/arm/v7,linux/386
+          context: v${{matrix.version}}
+          platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/386
           push: true
-          tags: abcsxyz/test:dogecoin
+          tags: abcsxyz/test:v${{matrix.version}}
