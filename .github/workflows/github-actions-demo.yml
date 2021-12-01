@@ -27,6 +27,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: docker_image
-          platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/386
+          platforms: linux/amd64
           push: true
-          tags: abcsxyz/architecture:1.0.1,abcsxyz/architecture:1,abcsxyz/architecture:latest
+          tags: abcsxyz/architecture:cache-1.0

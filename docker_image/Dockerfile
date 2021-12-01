@@ -1,7 +1,9 @@
 FROM debian:bullseye-slim
 
-WORKDIR /tmp/architecture
+ARG VERSION=1.0
 
-RUN dpkg --print-architecture || exit 3 #filter-tag-420
-RUN echo ok
+RUN apt update && apt install -y wget
 
+RUN wget https://github.com/dogecoin/dogecoin/releases/download/v1.14.5/dogecoin-1.14.5-i686-pc-linux-gnu.tar.gz
+
+RUN echo build OK
