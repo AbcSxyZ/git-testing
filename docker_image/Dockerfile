@@ -1,6 +1,6 @@
 FROM debian:bullseye-slim
 
-ARG VERSION=1.0
+ARG VERSION=2.0
 
 RUN apt update && apt install -y wget
 
