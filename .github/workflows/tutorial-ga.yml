@@ -9,19 +9,7 @@ jobs:
   Tutorial-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Hello World first step
-        run: echo "Hello World !"
-
-      - name: Display purpose
-        run: >
-          echo "This is a tutorial training"
-          and this is the end
-          of the line
-          multine line printing #lol
-
-  Second-Job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run hello in second job
+      - name: detect environment
         run: |
-          echo "Job 2: Hello World"
+          ls -lR
+          pwd
