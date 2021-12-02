@@ -11,5 +11,7 @@ jobs:
     steps:
       - name: detect environment
         run: |
-          ls -lR
+          ls -lRa
           pwd
+          git status
+
