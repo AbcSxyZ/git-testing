@@ -5,7 +5,7 @@ on:
 
 jobs:
   Tutorial-job:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
       - name: Hello World first step
         run: echo "Hello World !"
