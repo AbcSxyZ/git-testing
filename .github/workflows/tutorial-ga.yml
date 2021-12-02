@@ -18,12 +18,16 @@ jobs:
     steps:
       - name: pull repository
         uses: actions/checkout@v2
-      - name: detect environment
+      - name: first environment
+        env:
+          SUBSTEP: first
         run: |
-          echo env is $value1 $value2 end
-          echo printenv $(printenv value1)
-          printenv value1
-          env |grep value1
+          env
+
+      - name: Second Environment
+        env:
+          SUBSTEP: second
+        run: |
           env
 
   Second-Jobs:
