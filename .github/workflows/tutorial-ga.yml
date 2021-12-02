@@ -19,14 +19,14 @@ jobs:
       - name: pull repository
         uses: actions/checkout@v2
       - name: first environment
-        env:
-          SUBSTEP: first
         run: |
           env
 
+      - name: set environment variable
+        run: |
+          echo "::set-env name=user::joe"
+
       - name: Second Environment
-        env:
-          SUBSTEP: second
         run: |
           env
 
