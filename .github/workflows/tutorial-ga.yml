@@ -20,8 +20,8 @@ jobs:
         uses: actions/checkout@v2
       - name: push file
         run: |
-          git config --local user.email "abcsxyz@users.noreply.github.com"
-          git config --local user.name "abcsxyz"
+          git config --local user.email "github-action@users.noreply.github.com"
+          git config --local user.name "github-action"
           git checkout -b test_file
           echo "content for test" > new_file
           git add new_file
