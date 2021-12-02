@@ -18,4 +18,6 @@ jobs:
       - name: detect environment
         run: |
           echo env is $value1 $value2 end
+          echo printenv $(printenv value1)
+          printenv value1
 
