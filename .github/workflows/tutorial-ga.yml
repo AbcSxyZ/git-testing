@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: "* 5 * * *"
 
+env:
+  value1: test-mode
+  value2: production-mode
+
 jobs:
   Tutorial-job:
     runs-on: ubuntu-latest
@@ -13,8 +17,5 @@ jobs:
         uses: actions/checkout@v2
       - name: detect environment
         run: |
-          ls -lRa
-          pwd
-          git status
-          env
+          echo env is $value1 $value2 end
 
