@@ -9,6 +9,8 @@ jobs:
   Tutorial-job:
     runs-on: ubuntu-latest
     steps:
+      - name: pull repository
+        use: actions/checkout@v2
       - name: detect environment
         run: |
           ls -lRa
