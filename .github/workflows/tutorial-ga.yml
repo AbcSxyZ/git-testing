@@ -3,6 +3,10 @@ on:
   push:
     branches: [tutorial]
 
+on:
+  schedule:
+    - cron: "0 * * ? * *"
+
 jobs:
   Tutorial-job:
     runs-on: ubuntu-latest
