@@ -3,7 +3,7 @@ on:
   push:
     branches: [tutorial]
   schedule:
-    - cron: "0 * * * * *"
+    - cron: "0 * * * *"
 
 jobs:
   Tutorial-job:
