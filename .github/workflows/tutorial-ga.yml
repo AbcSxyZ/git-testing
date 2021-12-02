@@ -22,6 +22,8 @@ jobs:
         run: |
           git clone git@github.com:AbcSxyZ/git-testing.git
           cd git-testing
+          gh auth login --with-token < $(echo $GITHUB_TOKEN)
+          gh issue create  --project $GITHUB_REPOSITORY --title "Bot issue" --body "Automatic issue"
           # git config --local user.email "github-action@users.noreply.github.com"
           # git config --local user.name "github-action"
           # git checkout -b test_file2
