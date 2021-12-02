@@ -21,4 +21,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run hello in second job
-        run: echo "Job 2 Hello World"
+        run: |
+          echo "Job 2: Hello World"
