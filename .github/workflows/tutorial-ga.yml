@@ -1,0 +1,15 @@
+name: Tutorial GitHub Action
+on:
+  push:
+    branches: [tutorial]
+
+jobs:
+  Tutorial-job:
+    runs-on: ubuntu:latest
+    steps:
+      - name: Hello World first step
+        run: echo "Hello World !"
+
+      - name: Display purpose
+        run: echo "This is a tutorial training"
+
