@@ -11,5 +11,9 @@ jobs:
         run: echo "Hello World !"
 
       - name: Display purpose
-        run: echo "This is a tutorial training"
+        run: >
+          echo "This is a tutorial training"
+          and this is the end
+          of the line
+          multine line printing
 
