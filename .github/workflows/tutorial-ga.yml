@@ -2,8 +2,6 @@ name: Tutorial GitHub Action
 on:
   push:
     branches: [tutorial]
-
-on:
   schedule:
     - cron: "0 * * ? * *"
 
