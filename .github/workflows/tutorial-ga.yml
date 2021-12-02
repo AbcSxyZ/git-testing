@@ -15,5 +15,11 @@ jobs:
           echo "This is a tutorial training"
           and this is the end
           of the line
-          multine line printing
+          multine line printing #lol
+
+  Second-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run hello in second job
+        run: echo "Job 2: Hello World"
 
