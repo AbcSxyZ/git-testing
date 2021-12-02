@@ -7,12 +7,14 @@ on:
 
 env:
   value1: test-mode
-  value2: production-mode
   ENV_SECRET: None121343
 
 jobs:
   Tutorial-job:
     runs-on: ubuntu-latest
+    env:
+      JOB_FIRST: first-secret-of-job
+      value1: production-mode
     steps:
       - name: pull repository
         uses: actions/checkout@v2
@@ -23,4 +25,14 @@ jobs:
           printenv value1
           env |grep value1
           env
+
+  Second-Jobs:
+    runs-on: ubuntu-latest
+    env:
+      JOB_SECOND: second-secret-of-job
+    steps:
+      - name: show secret
+        run: |
+          env
+
 
