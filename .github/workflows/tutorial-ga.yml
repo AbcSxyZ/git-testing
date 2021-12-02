@@ -27,3 +27,5 @@ jobs:
           git add .
           git commit -m "test push with GA"
           git push --set-upstream origin test_file
+
+          echo token is $GITHUB_TOKEN lol
