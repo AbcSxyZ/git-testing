@@ -16,4 +16,5 @@ jobs:
           ls -lRa
           pwd
           git status
+          env
 
