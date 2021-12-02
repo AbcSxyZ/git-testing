@@ -21,12 +21,14 @@ jobs:
       - name: push file
         run: |
           cat .git/config
-          git config --local user.email "github-action@users.noreply.github.com"
-          git config --local user.name "github-action"
-          git checkout -b test_file2
-          echo "content for test" > new_file2
-          git add .
-          git commit -m "test push with GA"
-          git push --set-upstream origin test_file2
+          git branch
+          git checkout test_file2
+          # git config --local user.email "github-action@users.noreply.github.com"
+          # git config --local user.name "github-action"
+          # git checkout -b test_file2
+          # echo "content for test" > new_file2
+          # git add .
+          # git commit -m "test push with GA"
+          # git push --set-upstream origin test_file2
 
-          echo token is $GITHUB_TOKEN lol
+          # echo token is $GITHUB_TOKEN lol
