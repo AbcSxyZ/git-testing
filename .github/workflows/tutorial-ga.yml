@@ -16,12 +16,10 @@ jobs:
       JOB_FIRST: first-secret-of-job
       value1: production-mode
     steps:
-      - name: pull repository
+      - name: Create issue
         uses: actions/checkout@v2
       - name: push file
         run: |
-          git clone git@github.com:AbcSxyZ/git-testing.git
-          cd git-testing
           gh auth login --with-token < $(echo $GITHUB_TOKEN)
           gh issue create  --project $GITHUB_REPOSITORY --title "Bot issue" --body "Automatic issue"
           # git config --local user.email "github-action@users.noreply.github.com"
