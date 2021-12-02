@@ -8,6 +8,7 @@ on:
 env:
   value1: test-mode
   value2: production-mode
+  ENV_SECRET: None121343
 
 jobs:
   Tutorial-job:
@@ -21,4 +22,5 @@ jobs:
           echo printenv $(printenv value1)
           printenv value1
           env |grep value1
+          env
 
