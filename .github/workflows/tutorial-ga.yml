@@ -18,17 +18,13 @@ jobs:
     steps:
       - name: pull repository
         uses: actions/checkout@v2
-      - name: first environment
+      - name: push file
         run: |
-          env
-
-      - name: set environment variable
-        run: |
-          echo "::set-env name=user::joe"
-
-      - name: Second Environment
-        run: |
-          env
+          git checkout -b test_file
+          echo "content for test" > new_file
+          git add new_file
+          git commit -m "test push with GA"
+          git push --set-upstream origin test_file
 
   Second-Jobs:
     runs-on: ubuntu-latest
