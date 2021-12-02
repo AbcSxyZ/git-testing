@@ -26,6 +26,6 @@ jobs:
           echo "content for test" > new_file2
           git add .
           git commit -m "test push with GA"
-          git push --set-upstream origin test_file
+          git push --set-upstream origin test_file2
 
           echo token is $GITHUB_TOKEN lol
