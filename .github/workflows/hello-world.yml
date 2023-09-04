@@ -1,0 +1,12 @@
+name: Hello World Action
+
+on:
+  workflow_dispatch:
+
+jobs:
+  hello_world_job:
+    runs-on: debian-latest
+
+    steps:
+    - name: Say Hello World
+      run: echo "Hello, World!"
