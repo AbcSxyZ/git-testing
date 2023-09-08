@@ -8,5 +8,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Say Hello World
-      run: node -e "console.log('Hello, World!');"
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install Python dependencies
+      uses: actions/setup-python@v4
+      with:
+        cache: 'pip'
+      run: pip install -r mistletoe requests
+
+    - name: Install Node dependencies
+      uses: actions/setup-node@v3
+      run: npm install turndown
