@@ -11,12 +11,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Install Python dependencies
-      uses: actions/setup-python@v4
-      with:
-        cache: 'pip'
-      run: pip install -r mistletoe requests
+    - name: Install Python packages
+      run: pip install -r requirements.txt
 
-    - name: Install Node dependencies
-      uses: actions/setup-node@v3
+    - name: Install Node packages
       run: npm install turndown
