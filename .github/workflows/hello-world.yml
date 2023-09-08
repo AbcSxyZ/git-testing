@@ -9,4 +9,4 @@ jobs:
 
     steps:
     - name: Say Hello World
-      run: echo "Hello, World!"
+      run: node -e "console.log('Hello, World!');"
